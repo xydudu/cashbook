@@ -1,5 +1,5 @@
-KEY_1 = '0AoBOw3_rG2VwdDNqU25QZGwyQXVfdF9WcXRwWjJaZ3';
-KEY_2 = 'dDNqU25QZGwyQXVfdF9WcXRwWjJaZ3c6MA';
+KEY_1 = '';
+KEY_2 = '';
 
 var 
 http = require('http'),
