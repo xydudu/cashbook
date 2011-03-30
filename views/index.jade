@@ -1,0 +1,43 @@
+h2 
+    | Waaaa!!! 
+    | <strong id="total">#{total}</strong>
+ul#list
+    - each cost in costs
+        - if (cost.col1>0)
+            li
+              | #{cost.col0}
+              | <strong>#{cost.col1}</strong>
+
+input#cost
+input(id="add", type="button", value='add')
+
+script
+    $('#add').click(function() {
+        var 
+        c = $('#cost'),
+        t = $('#total'),
+        v = c.val(),
+        tv = +t.html();
+
+        if (v === '') {
+            alert('hey!!!');    
+            return false;
+        }
+
+        $.post('/add', {v: v}, function($data) {
+            if ($data === 'no') {
+                alert('没钱啦！！！');    
+            } else {
+                if ($data) {
+                    t.html(tv+ (+v));    
+                } else {
+                    $('#list').append('<li>just added<strong>'+ v +'</strong></li>');    
+                    t.html(tv-v);    
+                }
+            }
+            c.val('');    
+            
+        });
+
+    }); 
+
