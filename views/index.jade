@@ -1,15 +1,17 @@
-h2 
-    | Waaaa!!! 
-    | <strong id="total">#{total}</strong>
-ul#list
-    - each cost in costs
-        - if (cost.col1>0)
-            li
-              | #{cost.col0}
-              | <strong>#{cost.col1}</strong>
+#box
+    h2 
+        | Waaaa!!! 
+        | <strong id="total">#{total}</strong>
+    ul#list
+        - each cost in costs
+            - if (cost.col1>0)
+                li
+                  | <span>#{cost.col0.split(' ')[0]}</span>
+                  | <strong>#{cost.col1}</strong>
 
-input#cost
-input(id="add", type="button", value='add')
+    #space
+    input#cost
+    input(id="add", type="button", value='add')
 
 script
     $('#add').click(function() {
@@ -24,7 +26,7 @@ script
             return false;
         }
 
-        $.post('/add', {v: v}, function($data) {
+        $.post('/add', {v: v, t: tv}, function($data) {
             if ($data === 'no') {
                 alert('没钱啦！！！');    
             } else {

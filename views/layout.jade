@@ -2,5 +2,43 @@
 html
   head
     title Waaaaaa!!!
+    style
+        body {
+          padding: 50px;
+          background-color: #dddddd;
+          color: #00B7FF;
+          font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+        li {
+            color: gray;
+            text-align: left;
+            list-style: none;
+            border-left: 3px solid rgba(0, 0, 0, 0.1);
+            padding-left: 10px;
+        }
+        li strong {
+            color: red;
+            font-size: 20px;
+        }
+        li span {
+            float: right; 
+        }
+        #box {
+            -moz-border-radius: 8px 8px 8px 8px;
+            -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
+            padding: 15px;    
+            margin: 0 auto;
+            width: 550px;
+        }
+        #space {
+            height: 50px; 
+        }
+        #cost {
+            padding: 5px;
+            width: 480px;
+        }
     script(src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.min.js")
   body!= body

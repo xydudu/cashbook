@@ -45,6 +45,7 @@ app.get('/', function(req, res){
 app.post('/add', function(req, res){
     var 
     v = req.body.v,
+    total = req.body.t,
     isTotal = (v.indexOf('+') === 0),
     cost = 0,
     t = 0;
