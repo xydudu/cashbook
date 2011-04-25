@@ -39,7 +39,6 @@ app.get('/', function(req, res){
         total = last.col2 || last[0].col2;
         rows = (rows.length > 1) ? rows : [].concat(rows);  
         res.render('index', {costs: rows, total: total});    
-        //res.send(rows);
     });
 });
 
