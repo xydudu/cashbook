@@ -38,8 +38,8 @@ app.get('/', function(req, res){
         var last = rows.length > 1 ? rows.slice(-1) : rows,
         total = last.col2 || last[0].col2;
         rows = (rows.length > 1) ? rows : [].concat(rows);  
-        //res.render('index', {costs: rows, total: total});    
-        res.send(rows);
+        res.render('index', {costs: rows, total: total});    
+        //res.send(rows);
     });
 });
 
