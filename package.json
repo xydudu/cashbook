@@ -2,7 +2,7 @@
     "name": "cashbook",
     "version": "1.0.0",
     "dependencies": {
-        "express": "2.0.0",
+        "express": "2.2.2",
         "jade": "0.3"
     }
 }
