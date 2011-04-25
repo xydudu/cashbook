@@ -1,5 +1,5 @@
-KEY_1 = '';
-KEY_2 = '';
+KEY_1 = '0AoBOw3_rG2VwdDNqU25QZGwyQXVfdF9WcXRwWjJaZ3';
+KEY_2 = 'dDNqU25QZGwyQXVfdF9WcXRwWjJaZ3c6MA';
 
 var 
 http = require('http'),
@@ -68,4 +68,4 @@ app.post('/add', function(req, res){
     });
 });
 
-app.listen(3000, 'node.local');
+app.listen(8080);
