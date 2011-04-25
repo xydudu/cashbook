@@ -32,15 +32,15 @@ app.set('view engine', 'jade');
 app.use(express.bodyParser());
 
 app.get('/', function(req, res){
-    //var getUrl = 'http://query.yahooapis.com/v1/public/yql?q=select%20col0%2C%20col1%2C%20col2%20from%20csv%20where%20url%3D%22http%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fhl%3Den%26hl%3Den%26key%3D'+ KEY_1 +'c%26output%3Dcsv%22&format=json&diagnostics=true&'+ Math.random();
-    //httpQuery(getUrl, function($data) {
-    //    var rows = JSON.parse($data).query.results.row;
-    //    var last = rows.length > 1 ? rows.slice(-1) : rows,
-    //    total = last.col2 || last[0].col2;
-    //    rows = (rows.length > 1) ? rows : [].concat(rows);  
+    var getUrl = 'http://query.yahooapis.com/v1/public/yql?q=select%20col0%2C%20col1%2C%20col2%20from%20csv%20where%20url%3D%22http%3A%2F%2Fspreadsheets.google.com%2Fpub%3Fhl%3Den%26hl%3Den%26key%3D'+ KEY_1 +'c%26output%3Dcsv%22&format=json&diagnostics=true&'+ Math.random();
+    httpQuery(getUrl, function($data) {
+        var rows = JSON.parse($data).query.results.row;
+        var last = rows.length > 1 ? rows.slice(-1) : rows,
+        total = last.col2 || last[0].col2;
+        rows = (rows.length > 1) ? rows : [].concat(rows);  
         //res.render('index', {costs: rows, total: total});    
-    res.send('Hey!!!');
-    //});
+        res.send($data);
+    });
 });
 
 app.post('/add', function(req, res){
